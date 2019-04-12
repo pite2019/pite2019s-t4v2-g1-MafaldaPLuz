@@ -18,3 +18,26 @@
 #
 #Delete these comments before commit!
 #Good luck.
+import random
+from FlightSimulator import FlightSimulator
+
+def main():
+	flight = FlightSimulator()
+	zero = False
+	angle = flight.angle
+	
+	while(not zero):
+		
+		print("The angle of your plane is :"+str(flight.angle))
+		if(flight.angle == 0):
+			zero = True
+			print("your plane is ok")
+		else:
+			angle = flight.ajust(random.randint(1,3))
+			angle = flight.disturbance()
+			print("You ajusted the angle to :"+str(flight.angle))
+			
+		
+ 
+if __name__== '__main__':
+	main()
